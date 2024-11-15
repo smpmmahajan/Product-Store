@@ -1,0 +1,11 @@
+<div *ngIf="(product$ | async) !== undefined; else loadingElement">
+    <app-products-edit
+      (add)="addProduct($event)"
+      (update)="updateProduct($event)"
+      (delete)="deleteProduct($event)"
+      [product]="product$ | async"
+    ></app-products-edit>
+  </div>
+  
+  <ng-template #loadingElement>Loading...</ng-template>
+  
