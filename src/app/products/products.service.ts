@@ -13,6 +13,7 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getAll() {
+    debugger;
     return this.http
       .get<Product[]>(this.productsAPIUrl)
       .pipe(catchError(this.handleError));
@@ -45,5 +46,5 @@ export class ProductsService {
     return throwError(
       () => `${status}: Something bad happened.`
     );
-  }
+  } 
 }
